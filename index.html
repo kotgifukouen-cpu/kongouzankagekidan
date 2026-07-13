@@ -129,6 +129,13 @@
         repeating-linear-gradient(45deg,rgba(35,7,17,.06) 0 1px,transparent 1px 14px);
       display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;
     }
+      .map img{
+      width:100%;
+      height:300px;
+      object-fit:cover;
+      border-radius:var(--radius);
+      display:block;
+    }
     footer{background:var(--deep);color:#fff;padding:40px 0}
     footer .muted{color:#d7c0c7}
     @media(max-width:860px){
@@ -247,7 +254,6 @@
             <tr><th>主催</th><td>金剛山歌劇団岐阜公演実行委員会</td></tr>
           </table>
         </div>
-<img src="mainImage3_2026_new_2.jpg" alt="会場写真" style="width: 100%; max-width: 600px; height: auto; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); display: block; margin: 24px auto;">
         <div class="cards" style="margin-top:18px">
           <div class="card">
             <h3>開催日</h3>
@@ -361,10 +367,8 @@
             <p>TEL：058-296-1200</p>
             <a class="btn secondary" href="https://www.google.com/maps/search/?api=1&query=%E9%95%B7%E8%89%AF%E5%B7%9D%E5%9B%BD%E9%9A%9B%E4%BC%9A%E8%AD%B0%E5%A0%B4" target="_blank" rel="noopener">Googleマップで見る</a>
           </div>
-          <div class="map">
-            <div>
-              <strong>MAP</strong><br>
-              会場写真や地図画像を入れる場合は、ここに配置できます。
+            <div class="map">
+              <img src="mainImage3_2026_new_2.jpg" alt="会場写真">
             </div>
           </div>
         </div>
