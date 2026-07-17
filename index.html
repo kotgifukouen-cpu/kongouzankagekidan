@@ -179,6 +179,46 @@
   margin:0;
   padding:0;
 }
+
+    /* ===== 画像モーダル ===== */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:rgba(0,0,0,.9);
+  justify-content:center;
+  align-items:center;
+  overflow:auto;
+}
+
+.modal img{
+  display:block;
+  max-width:95%;
+  max-height:95%;
+  margin:auto;
+  object-fit:contain;
+}
+
+.close-btn{
+  position:fixed;
+  top:20px;
+  right:20px;
+  width:48px;
+  height:48px;
+  border:none;
+  border-radius:50%;
+  background:rgba(255,255,255,.9);
+  color:#333;
+  font-size:28px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.close-btn:hover{
+  background:#fff;
+}
+<!-- ここまで -->
     
   </style>
 </head>
@@ -324,6 +364,14 @@
         <img src="修正座席表.jpg" alt="公演イメージ">
     </section>
 
+    <p style="text-align:center; margin:25px 0;">
+      <a class="btn secondary"
+         href="#"
+         onclick="openImage(); return false;">
+         📷 会場全体図はこちら
+      </a>
+  </p>
+
         
         <div style="text-align:center; margin:30px 0;">
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSdIyMjkzYZ_tvU18AGjfkUP6QZZrv9iyAknlEGgRMISb5Tl1w/viewform?usp=header"
@@ -457,5 +505,46 @@
     </div>
 
   </footer>
+
+  <!-- ここから追加 -->
+<div id="imageModal" class="modal">
+
+    <button class="close-btn" onclick="closeImage()">
+        ✕
+    </button>
+
+    <img src="裏面全国統一.jpg" alt="公演全体図">
+
+</div>
+<!-- ここまで追加 -->
+
+<script>
+
+function openImage(){
+    document.getElementById("imageModal").style.display="flex";
+}
+
+function closeImage(){
+    document.getElementById("imageModal").style.display="none";
+}
+
+// ESCキーで閉じる
+document.addEventListener("keydown",function(e){
+    if(e.key==="Escape"){
+        closeImage();
+    }
+});
+
+// 背景クリックで閉じる
+document.getElementById("imageModal").addEventListener("click",function(e){
+
+    if(e.target===this){
+        closeImage();
+    }
+
+});
+
+</script>
+  
 </body>
 </html>
