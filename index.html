@@ -218,6 +218,15 @@
 .close-btn:hover{
   background:#fff;
 }
+
+.ticketpia-btn img{
+    transition:.2s;
+}
+
+.ticketpia-btn img:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(0,0,0,.25);
+}
 /* ここまで */
     
   </style>
@@ -394,26 +403,12 @@
         </div>
 
        <!-- チケットぴあ -->
-          <div style="text-align:center; margin-top:15px;">
-          
-            <a href="http://ticket.pia.jp/pia/event.ds?eventCd=2630089"
-               target="_blank"
-               rel="noopener noreferrer">
-          
-              <img src="購入するボタン.gif"
-                   alt="チケットぴあで購入"
-                   style="
-                      width:320px;
-                      max-width:90%;
-                      height:auto;
-                      border-radius:10px;
-                      transition:.2s;
-                      box-shadow:0 4px 10px rgba(0,0,0,.2);
-                   ">
-          
-            </a>
-          
-          </div>
+          <a class="ticketpia-btn"
+             href="http://ticket.pia.jp/pia/event.ds?eventCd=2630089"
+             target="_blank"
+             rel="noopener">
+              <img src="購入するボタン.gif" alt="チケットぴあで購入">
+          </a>
         
 
         
