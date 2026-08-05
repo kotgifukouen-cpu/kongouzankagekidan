@@ -227,6 +227,23 @@
     transform:translateY(-2px);
     box-shadow:0 8px 18px rgba(0,0,0,.25);
 }
+
+    /* 動画モーダル */
+.movie-box{
+    width:min(1000px,90vw);
+    aspect-ratio:16/9;
+    background:#000;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.movie-box iframe{
+    width:100%;
+    height:100%;
+    border:none;
+}
+
+    
 /* ここまで */
     
   </style>
@@ -247,6 +264,18 @@
   <section class="hero-image">
   <img src="コピー.jpg" alt="金剛山歌劇団">
   </section>
+
+  <!-- 動画 -->
+    <div style="text-align:center; margin:40px 0;">
+    
+        <a class="btn"
+           href="#"
+           onclick="openMovie(); return false;">
+            🎥 公演紹介映像を見る
+        </a>
+    
+    </div>
+    <!-- ▲ここまで動画 -->
 
   <main>
 
@@ -614,6 +643,28 @@
 </div>
 <!-- ここまで追加 -->
 
+<!-- 動画モーダル -->
+    <div id="movieModal" class="modal">
+    
+        <button class="close-btn"
+                onclick="closeMovie()">
+            ✕
+        </button>
+    
+        <div class="movie-box">
+    
+            <iframe
+                id="movieFrame"
+                src=""
+                title="公演紹介映像"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+            </iframe>
+    
+        </div>
+
+</div>
+
 <script>
 
 function openImage(){
@@ -622,6 +673,23 @@ function openImage(){
 
 function closeImage(){
     document.getElementById("imageModal").style.display="none";
+}
+
+  function openMovie(){
+
+    document.getElementById("movieModal").style.display="flex";
+
+    document.getElementById("movieFrame").src=
+    "https://www.youtube.com/embed/UCgqydKtMkE?autoplay=1";
+
+}
+
+function closeMovie(){
+
+    document.getElementById("movieModal").style.display="none";
+
+    document.getElementById("movieFrame").src="";
+
 }
 
 // ESCキーで閉じる
@@ -636,6 +704,14 @@ document.getElementById("imageModal").addEventListener("click",function(e){
 
     if(e.target===this){
         closeImage();
+    }
+
+});
+
+  document.getElementById("movieModal").addEventListener("click",function(e){
+
+    if(e.target===this){
+        closeMovie();
     }
 
 });
